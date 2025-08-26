@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 // import ReCAPTCHA from "react-google-recaptcha";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -11,15 +11,12 @@ import Ellipse from "../../assets/Ellipse 793.png";
 import TwitterIcon from "../../assets/grp1.png";
 import InstagramIcon from "../../assets/grp2.png";
 import ChatIcon from "../../assets/grp3.png";
-import Footer from "@/components/Footer";
+import Footer from "@/components/Footer"; 
 
 // Toast notification component
 const Toast = ({ message, type, onClose }: { message: string; type: "success" | "error"; onClose: () => void }) => {
   useEffect(() => {
-    const timer = setTimeout(() => {
-      onClose();
-    }, 3000);
-
+    const timer = setTimeout(() => onClose(), 3000);
     return () => clearTimeout(timer);
   }, [onClose]);
 
@@ -50,23 +47,11 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-    watch,
-  } = useForm<FormData>();
-
-  // Watch form fields to determine if labels should stay at top
+  const { register, handleSubmit, formState: { errors }, reset, watch } = useForm<FormData>();
   const formValues = watch();
 
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: false,
-      mirror: true,
-    });
+    AOS.init({ duration: 1000, once: false, mirror: true });
     AOS.refresh();
   }, []);
 
@@ -74,20 +59,34 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch("/api/contact", {
+      const payload = {
+        fullName: `${data.firstName} ${data.lastName}`, // combine first & last name
+        emailAddress: data.email, // rename
+        phoneNumber: data.phone, // rename
+        subject: "Contact Form Submission", // default subject
+        message: data.message,
+      };
+
+      const res = await fetch("https://api.team.gohashinclude.com/api/front/submit-contact-us", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       });
+
+      const result = await res.json(); // parse API response
 
       if (res.ok) {
         setToast({ message: "Your message has been sent successfully!", type: "success" });
         reset();
       } else {
-        setToast({ message: "There was a problem sending your message. Please try again.", type: "error" });
+        console.error("API Error Response:", result);
+        setToast({
+          message: result?.message || "There was a problem sending your message. Please check your data.",
+          type: "error",
+        });
       }
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error("Network or server error:", error);
       setToast({ message: "There was a problem sending your message. Please try again.", type: "error" });
     } finally {
       setIsSubmitting(false);
@@ -102,10 +101,7 @@ export default function ContactPage() {
         <h2 className="text-4xl font-bold text-[#0271B1] text-center">Contact Us</h2>
         <p className="text-gray-500 font-medium text-center mt-2 mb-8">Any question or remarks? Just write us a message!</p>
 
-        <div
-          className="bg-white rounded-xl m-6 shadow-2xl w-full max-w-5xl flex flex-col md:flex-row overflow-visible"
-          data-aos="zoom-in"
-        >
+        <div className="bg-white rounded-xl m-6 shadow-2xl w-full max-w-5xl flex flex-col md:flex-row overflow-visible" data-aos="zoom-in">
           {/* Left side - contact info */}
           <div className="bg-[#0271B1] text-white md:w-2/5 p-8 flex flex-col rounded-xl justify-between">
             <div>
@@ -114,23 +110,15 @@ export default function ContactPage() {
               <div className="space-y-8 lg:mt-20">
                 <div className="flex items-center gap-4 lg:mb-16">
                   <FaPhoneAlt className="text-white text-2xl" />
-                  <a href="tel:+91 9636922144" className="">
-                    +91 9636922144
-                  </a>
+                  <a href="tel:+91 9636922144">+91 9636922144</a>
                 </div>
                 <div className="flex items-center gap-4 lg:mb-16">
                   <FaEnvelope className="text-white text-2xl" />
-                  <a href="mailto:hr@gohashinclude.com" className="">
-                    hr@gohashinclude.com
-                    info@gohashinclude.com
-                  </a>
+                  <a href="mailto:hr@gohashinclude.com">hr@gohashinclude.com info@gohashinclude.com</a>
                 </div>
                 <div className="flex items-start gap-4">
                   <FaMapMarkerAlt className="text-white text-5xl -mt-4" />
-                  <span>
-                    Nirman Nagar E, P.No. 31 ist Floor, Since Krishna Tower, Ajmer Rd, opp. Asopa Hospital, Jaipur,
-                    Rajanthan 302024
-                  </span>
+                  <span>Nirman Nagar E, P.No. 31 ist Floor, Since Krishna Tower, Ajmer Rd, opp. Asopa Hospital, Jaipur, Rajanthan 302024</span>
                 </div>
               </div>
             </div>
@@ -156,60 +144,45 @@ export default function ContactPage() {
           <div className="flex-1 p-6">
             <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 p-2">
+                {/* First Name */}
                 <div className="relative">
                   <input
                     type="text"
                     {...register("firstName", { required: "First name is required" })}
                     className="peer w-full border-b-2 border-[#04152E] focus:border-[#0271B1] outline-none py-2"
                   />
-                  <label
-                    className={`absolute left-0 text-[#04152E] transition-all duration-300
-                      ${formValues.firstName ? "-top-4 text-sm text-[#0271B1]" : "top-2"} 
-                      peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#0271B1]
-                      ${errors.firstName ? "text-red-500" : ""}`}
-                  >
+                  <label className={`absolute left-0 text-[#04152E] transition-all duration-300 ${formValues.firstName ? "-top-4 text-sm text-[#0271B1]" : "top-2"} peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#0271B1] ${errors.firstName ? "text-red-500" : ""}`}>
                     First Name
                   </label>
                   {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName.message}</p>}
                 </div>
 
+                {/* Last Name */}
                 <div className="relative">
                   <input
                     type="text"
                     {...register("lastName", { required: "Last name is required" })}
                     className="peer w-full border-b-2 border-[#04152E] focus:border-[#0271B1] outline-none py-2"
                   />
-                  <label
-                    className={`absolute left-0 text-[#04152E] transition-all duration-300
-                      ${formValues.lastName ? "-top-4 text-sm text-[#0271B1]" : "top-2"} 
-                      peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#0271B1]
-                      ${errors.lastName ? "text-red-500" : ""}`}
-                  >
+                  <label className={`absolute left-0 text-[#04152E] transition-all duration-300 ${formValues.lastName ? "-top-4 text-sm text-[#0271B1]" : "top-2"} peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#0271B1] ${errors.lastName ? "text-red-500" : ""}`}>
                     Last Name
                   </label>
                   {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName.message}</p>}
                 </div>
               </div>
 
+              {/* Email & Phone */}
               <div className="grid grid-cols-1 md:grid-cols-2 p-2 gap-6">
                 <div className="relative">
                   <input
                     type="email"
                     {...register("email", {
                       required: "Email is required",
-                      pattern: {
-                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: "Invalid email address",
-                      },
+                      pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Invalid email address" },
                     })}
                     className="peer w-full border-b-2 border-[#04152E] focus:border-[#0271B1] outline-none py-2"
                   />
-                  <label
-                    className={`absolute left-0 text-[#04152E] transition-all duration-300
-                      ${formValues.email ? "-top-4 text-sm text-[#0271B1]" : "top-2"} 
-                      peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#0271B1]
-                      ${errors.email ? "text-red-500" : ""}`}
-                  >
+                  <label className={`absolute left-0 text-[#04152E] transition-all duration-300 ${formValues.email ? "-top-4 text-sm text-[#0271B1]" : "top-2"} peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#0271B1] ${errors.email ? "text-red-500" : ""}`}>
                     Email
                   </label>
                   {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
@@ -220,40 +193,25 @@ export default function ContactPage() {
                     type="tel"
                     maxLength={20}
                     {...register("phone", {
-                      pattern: {
-                        value: /^[+]?[0-9\s\-()]{6,20}$/,
-                        message: "Invalid phone number format",
-                      },
-                      maxLength: {
-                        value: 20,
-                        message: "Phone number cannot exceed 20 digits",
-                      },
+                      pattern: { value: /^[+]?[0-9\s\-()]{6,20}$/, message: "Invalid phone number format" },
+                      maxLength: { value: 20, message: "Phone number cannot exceed 20 digits" },
                     })}
                     className="peer w-full border-b-2 border-[#04152E] focus:border-[#0271B1] outline-none py-2"
                   />
-                  <label
-                    className={`absolute left-0 text-[#04152E] transition-all duration-300
-                      ${formValues.phone ? "-top-4 text-sm text-[#0271B1]" : "top-2"} 
-                      peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#0271B1]
-                      ${errors.phone ? "text-red-500" : ""}`}
-                  >
+                  <label className={`absolute left-0 text-[#04152E] transition-all duration-300 ${formValues.phone ? "-top-4 text-sm text-[#0271B1]" : "top-2"} peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#0271B1] ${errors.phone ? "text-red-500" : ""}`}>
                     Phone Number
                   </label>
                   {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
                 </div>
               </div>
 
+              {/* Message */}
               <div className="relative p-2">
                 <textarea
                   {...register("message", { required: "Message is required" })}
                   className="peer w-full border-b-2 border-[#04152E] focus:border-blue-500 outline-none py-2 resize-none"
                 ></textarea>
-                <label
-                  className={`absolute left-0 p-2 text-[#04152E] transition-all duration-300
-                    ${formValues.message ? "-top-4 text-sm text-[#0271B1]" : "top-2"} 
-                    peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#0271B1]
-                    ${errors.message ? "text-red-500" : ""}`}
-                >
+                <label className={`absolute left-0 p-2 text-[#04152E] transition-all duration-300 ${formValues.message ? "-top-4 text-sm text-[#0271B1]" : "top-2"} peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#0271B1] ${errors.message ? "text-red-500" : ""}`}>
                   Write your message..
                 </label>
                 {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
@@ -267,7 +225,8 @@ export default function ContactPage() {
                 />
               </div> */}
 
-              <div className="relative flex flex-col items-end ">
+              {/* Submit button */}
+              <div className="relative flex flex-col items-end">
                 <button
                   type="submit"
                   disabled={isSubmitting}
