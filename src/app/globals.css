@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/* Default Light Mode */
+:root {
+  --background: #ffffff;   /* white */
+  --foreground: #171717;   /* gray-900 (normal text) */
+  --inverse: #ffffff;      /* white (special/inverse text) */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-inverse: var(--inverse);
+  --font-sans: var(--font-instrument-sans), sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;  
+    --foreground: #ffffff;  
+    --inverse: #ffffff;     
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  @apply font-sans;
+}
+
+/* ========================
+   Custom Animations
+   ======================== */
+
+/* Light Blue Glow Pulse */
+@keyframes pulse-light {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(1, 186, 248, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 25px 12px rgba(15, 184, 241, 0.3);
+  }
+}
+
+.animate-pulse-light {
+  animation: pulse-light 2s infinite;
+}
+
+/* Heartbeat Effect */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.1); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.1); }
+  70% { transform: scale(1); }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.5s infinite;
+}
+
+/* ========================
+   Extra Utilities
+   ======================== */
+@layer utilities {
+  .text-inverse {
+    color: var(--color-inverse);
+  }
+}
