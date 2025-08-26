@@ -106,11 +106,11 @@ const services = [
     desc: "With our Salesforce implementation services, you can be sure that the right planning is done to ensure you achieve a successful deployment that is pertinent to your company’s goals and the potential of the platform.",
     icon: <FaDatabase className="text-4xl sm:text-5xl text-[#2071B1]" />,
   },
-  //{
-    //title: "Multi-Experience Development",
-    //desc: "We help you deliver high-quality user experiences across various types of devices following a multi-experience development approach to offer seamless applications.",
-    //icon: <FaChartBar className="text-4xl sm:text-5xl text-[#2071B1]" />,
-  //},
+  {
+    title: "Salesforce Support & Maintenance",
+    desc: "Ongoing monitoring, troubleshooting, and optimization of your Salesforce environment to ensure peak performance, security, and seamless adoption across your organization.",
+    icon: <FaChartBar className="text-4xl sm:text-5xl text-[#2071B1]" />,
+  },
 ];
 
 const cardVariants: Variants = {

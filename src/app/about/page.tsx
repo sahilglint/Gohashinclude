@@ -208,12 +208,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold mb-6">Meet GOHASHINCLUDE</h2>
           <ul className="space-y-4 text-gray-700 leading-relaxed list-disc pl-5 dark:text-white">
             <li>
-              At GOHASHINCLUDE, we are more than just an IT solutions provider—we
-              are your technology partner for sustainable digital success. For
-              over 13 years, we have been helping businesses of all sizes—from
-              agile startups to global enterprises—leverage cutting-edge
-              technology to unlock new opportunities, streamline operations, and
-              achieve measurable growth.
+             At GOHASHINCLUDE, we are more than just an IT solutions provider—we are your technology partner for sustainable digital success. With over 13 years of overall experience, including 6+ years of specialized expertise in AI/ML, we have been helping businesses of all sizes—from agile startups to global enterprises—leverage cutting-edge technology to unlock new opportunities, streamline operations, and achieve measurable growth.
             </li>
             <li>
               Our expertise spans web and mobile application development,
@@ -271,7 +266,7 @@ export default function AboutPage() {
                 }}
                 data-aos="zoom-in"
               >
-                <span className="text-3xl sm:text-7xl font-semibold mb-4 font-mono">6+</span>
+                <span className="text-3xl sm:text-7xl font-semibold mb-4 font-mono">13+</span>
                 <span className="text-sm sm:text-2xl font-semibold">Experience</span>
               </div>
             </div>

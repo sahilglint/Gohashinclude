@@ -15,21 +15,7 @@ import { AiFillCodeSandboxCircle } from "react-icons/ai";
 import { FaSalesforce } from "react-icons/fa6";
 import { GrAppsRounded } from "react-icons/gr";
 
-import {
-  FaRobot,
-  FaBrain,
- // FaChartLine,
-  FaLanguage,
-  //FaPalette,
-  //FaPencilRuler,
-  FaBrush,
-  FaObjectGroup,
-  FaCode,
-  FaMobile,
-  FaCloud,
-  FaServer,
 
-} from "react-icons/fa";
 
 const navLinks = [
   { name: "About Us", href: "/about" },
@@ -56,10 +42,10 @@ const navLinks = [
       ]
     ]
   },
-  { name: "Our Team", href: "/team", },
+  // { name: "Our Team", href: "/team", },
   { name: "Careers", href: "/careers", },
   { name: "Blog", href: "/blog", },
-  { name: "Case Study", href: "/case-study", },
+  // { name: "Case Study", href: "/case-study", },
 ];
 
 export default function Header() {
