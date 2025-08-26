@@ -560,7 +560,7 @@ const Homepage = () => {
   return (
     <>
       <main className="min-h-screen bg-gradient-to-b from-white to-blue-100 lg:-mt-2  px-4 flex items-center">
-        <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center lg:items-start gap-10">
+        <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center lg:items-start gap-10">
 
           <div className="flex-1 space-y-8">
             <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-4">
@@ -570,7 +570,7 @@ const Homepage = () => {
                 Trusted IT & AI Partner
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-bold text-gray-900 leading-tight"
+              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight"
                 data-aos="fade-up"
               >
                 Elevate Your <span className="text-[#0271B1]">Business</span><br />
@@ -657,7 +657,7 @@ const Homepage = () => {
               w-64 h-64
               sm:w-80 sm:h-80
               md:w-96 md:h-[420px]
-              lg:w-[550px] lg:h-[500px]
+              lg:w-[450px] lg:h-[420px]
             "
                 />
               </motion.div>

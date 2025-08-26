@@ -47,7 +47,7 @@ const Footer = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href="/consulting" className="text-slate-400 hover:text-slate-200 text-base">
+                                <a href="/core-capabilities/ai" className="text-slate-400 hover:text-slate-200 text-base">
                                     Core Capabilities
                                 </a>
                             </li>
