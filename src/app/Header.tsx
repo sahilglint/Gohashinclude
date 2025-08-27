@@ -18,6 +18,7 @@ import { GrAppsRounded } from "react-icons/gr";
 
 
 const navLinks = [
+  { name: "Home", href: "/", },
   { name: "About Us", href: "/about" },
   {
     name: "Core Capabilities",
@@ -44,7 +45,7 @@ const navLinks = [
   },
   // { name: "Our Team", href: "/team", },
   { name: "Careers", href: "/careers", },
-  { name: "Blog", href: "/blog", },
+  // { name: "Blog", href: "/blog", },
   // { name: "Case Study", href: "/case-study", },
 ];
 
