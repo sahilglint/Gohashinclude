@@ -558,562 +558,422 @@ const Homepage = () => {
   ];
 
   return (
-    <>
-      <main className="min-h-screen bg-gradient-to-b from-white to-blue-100 lg:-mt-2  px-4 flex items-center">
-        <div className="max-w-[1400px] mx-auto w-full flex flex-col lg:flex-row items-center lg:items-start gap-10 px-4 sm:px-6 lg:px-8">
+   <>
+  <main className="min-h-screen bg-gradient-to-b from-white to-blue-100 lg:-mt-2 px-4 flex items-center">
+    <div className="max-w-[1400px] mx-auto w-full flex flex-col lg:flex-row items-center lg:items-start gap-10 px-4 sm:px-6 lg:px-8">
+      {/* Content section */}
+      <div className="flex-1 space-y-8">
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-4">
+          <div className="inline-block px-4 py-3 bg-[#0271B1] lg:mt-0 mt-10 text-white text-sm font-semibold rounded-full" data-aos="fade-up">
+            Trusted IT & AI Partner
+          </div>
 
-          <div className="flex-1 space-y-8">
-            <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-4">
-              <div className="inline-block px-4 py-3 bg-[#0271B1] lg:mt-0 mt-10 text-white text-sm font-semibold rounded-full"
-                data-aos="fade-up"
-              >
-                Trusted IT & AI Partner
-              </div>
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight" data-aos="fade-up">
+            Elevate Your <span className="text-[#0271B1]">Business</span><br />
+            With <span className="text-[#0271B1]">GOHASHINCLUDE</span>
+          </h1>
+        </div>
 
-              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight"
-                data-aos="fade-up"
-              >
-                Elevate Your <span className="text-[#0271B1]">Business</span><br />
-                With <span className="text-[#0271B1]">GOHASHINCLUDE</span>
-              </h1>
+        <p className="text-gray-600 text-base sm:text-md text-justify lg:w-full" data-aos="zoom-in">
+          We harness the power of AI, cloud, and advanced engineering to create scalable, results-driven solutions.
+          Global enterprises trust us to deliver secure, high-performance software, intelligent systems, and seamless
+          integrations. We focus on innovation that drives real business impact. From concept to deployment, we ensure
+          every solution is built for growth and reliability.
+        </p>
+
+        <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-center lg:text-left" data-aos="zoom-in">
+          {[
+            { value: "200+", label: "Projects Delivered" },
+            { value: "70+", label: "Happy Clients" },
+            { value: "13+", label: "Years Experience" },
+          ].map((stat) => (
+            <div key={stat.label} className="bg-white rounded-lg shadow p-4 w-full sm:w-40">
+              <p className="text-[#0271B1] font-bold text-xl">{stat.value}</p>
+              <p className="text-sm text-gray-600">{stat.label}</p>
             </div>
+          ))}
+        </div>
 
-            <p className="text-gray-600 text-base sm:text-md text-justify lg:w-full"
-              data-aos="zoom-in"
-            >
-              We harness the power of AI, cloud, and advanced engineering to create scalable, results-driven solutions.
-              Global enterprises trust us to deliver secure, high-performance software, intelligent systems, and seamless
-              integrations. We focus on innovation that drives real business impact. From concept to deployment, we ensure
-              every solution is built for growth and reliability.
-            </p>
-
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-center lg:text-left"
-              data-aos="zoom-in"
-            >
-              {[
-                { value: "200+", label: "Projects Delivered" },
-                { value: "70+", label: "Happy Clients" },
-                { value: "13+", label: "Years Experience" },
-              ].map((stat) => (
-                <div key={stat.label} className="bg-white rounded-lg shadow p-4 w-full sm:w-40">
-                  <p className="text-[#0271B1] font-bold text-xl">{stat.value}</p>
-                  <p className="text-sm text-gray-600">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex flex-col mb-4 sm:flex-row justify-center lg:justify-start gap-4 w-full"
-
-            >
-              <button
-                onClick={() => {
-                  document.getElementById("capabilities")?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                }}
-                className="w-full sm:w-auto text-sm cursor-pointer inline-flex justify-center bg-[#0271B1] text-white font-semibold py-3 px-6 rounded-md transition-colors duration-150"
-              >
-                Explore Our Capabilities
-              </button>
-              <a href="/contact">
-                <button
-                  className="w-full sm:w-auto cursor-pointer text-sm inline-flex justify-center border-2 border-[#0271B1] 
+        <div className="flex flex-col mb-4 sm:flex-row justify-center lg:justify-start gap-4 w-full">
+          <button
+            onClick={() => {
+              document.getElementById("capabilities")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+            className="w-full sm:w-auto text-sm cursor-pointer inline-flex justify-center bg-[#0271B1] text-white font-semibold py-3 px-6 rounded-md transition-colors duration-150"
+          >
+            Explore Our Capabilities
+          </button>
+          <a href="/contact">
+            <button
+              className="w-full sm:w-auto cursor-pointer text-sm inline-flex justify-center border-2 border-[#0271B1] 
              hover:bg-[#0271B1] text-[#0271B1] hover:text-white 
               dark:text-black 
              font-bold py-3 px-6 rounded-md transition-colors duration-150"
-                >
-                  Book a Consultation
-                </button>
-              </a>
-
-            </div>
-          </div>
-
-          <div
-            className="flex-1 flex justify-center lg:justify-end"
-            data-aos="fade-down"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="mb-10"
             >
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <Image
-                  src={aboutImg}
-                  alt="Hero"
-                  className="
-              rounded-xl object-cover
-              w-64 h-64
-              sm:w-80 sm:h-80
-              md:w-96 md:h-[420px]
-              lg:w-[450px] lg:h-[420px]
-            "
-                />
-              </motion.div>
-            </motion.div>
-          </div>
-
+              Book a Consultation
+            </button>
+          </a>
         </div>
-      </main>
+      </div>
 
-      <section
-        data-aos="fade-up"
-        className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-gray-300"
-      >
-
-
-        <div className="flex flex-col sm:flex-row items-center gap-10">
-          <div className="w-full sm:w-1/2 text-center sm:text-left">
-            <h2 className="lg:text-3xl text-2xl font-bold mb-4"
-              data-aos="fade-up"
-            >Meet GOHASHINCLUDE</h2>
-            <p className="text-gray-600 text-[16px] mb-6 leading-relaxed dark:text-white"
-              data-aos="zoom-in"
-            >
-              Welcome to our IT Solutions company, where we specialize in delivering
-              cutting-edge technology services tailored to businesses across the DC,
-              Maryland, and Virginia area. We understand that navigating the digital
-              landscape can be challenging, which is why we're here to provide smart,
-              reliable, and cost-effective solutions—from cloud computing and
-              cybersecurity to software development and IT support—to help your
-              business thrive.
-            </p>
-            <div className="flex justify-center sm:justify-start gap-4"
-              data-aos="zoom-in"
-            >
-              <a href="/about">
-                <button className="px-6 cursor-pointer py-2 text-sm border-2 border-[#0271B1] text-[#0271B1] rounded hover:bg-[#0271B1] hover:text-white transition">
-                  Read More
-                </button>
-              </a>
-
-              <a href="/contact">
-                <button className="px-5 py-2 bg-[#0271B1] cursor-pointer text-white rounded transition">
-                  Contact us today
-                </button>
-              </a>
-
-            </div>
-          </div>
-
-          <div className="w-full sm:w-1/2 relative flex justify-center sm:justify-end overflow-visible">
-            <div
-              data-aos="fade-up"
-              className="relative w-[16rem] sm:w-[22rem] h-[22rem] sm:h-[32rem]
-              rounded-lg overflow-hidden
-              "
-            >
-              <Image
-                src={sectionimg1}
-                alt="Back image"
-                className="w-full h-full object-cover rounded-lg"
-              />
-            </div>
-
-            <div
-              data-aos="fade-down"
-              className="absolute top-1/2 -translate-y-1/2 left-0 sm:left-12
-              w-48 sm:w-80 h-52 sm:h-80 rounded-xl 
-              overflow-hidden"
-            >
-              <Image
-                src={sectionimg2}
-                alt="free"
-                className="w-full h-full object-cover rounded-xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-
-      <div className="border-b border-blue-200 max-w-7xl mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
-
-      <section
-        id="capabilities"
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
-      >
-        <h2 className="text-[28px] font-bold mb-2"
-          data-aos="fade-up"
-        >Core Capabilities</h2>
-        <p className="text-gray-600 mb-8 max-w-4xl dark:text-white"
-          data-aos="zoom-in"
+      {/* Image section */}
+      <div className="flex-1 flex justify-center lg:justify-end" data-aos="fade-down">
+        <motion.div
+          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.98 }}
+          className="mb-10"
         >
-          Modular services designed for rapid impact — from AI and data to
-          cloud-native platforms and secure operations.
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <Image
+              src={aboutImg}
+              alt="Hero"
+              className="rounded-xl object-cover w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-[420px] lg:w-[450px] lg:h-[420px]"
+            />
+          </motion.div>
+        </motion.div>
+      </div>
+    </div>
+  </main>
+
+  {/* About Section */}
+  <section data-aos="fade-up" className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-gray-300">
+    <div className="w-full flex flex-col lg:flex-row items-center lg:items-start gap-10">
+      <div className="flex-1 space-y-6 text-center lg:text-left">
+        <h2 className="lg:text-3xl text-2xl font-bold" data-aos="fade-up">Meet GOHASHINCLUDE</h2>
+        <p className="text-gray-600 text-[16px] leading-relaxed dark:text-white" data-aos="zoom-in">
+          Welcome to our IT Solutions company, where we specialize in delivering
+          cutting-edge technology services tailored to businesses across the DC,
+          Maryland, and Virginia area. We understand that navigating the digital
+          landscape can be challenging, which is why we're here to provide smart,
+          reliable, and cost-effective solutions—from cloud computing and
+          cybersecurity to software development and IT support—to help your
+          business thrive.
         </p>
-
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map((card, idx) => {
-            const isActive = activeIndex === idx;
-            const isHovered = hoverIndex === idx;
-
-            return (
-              <div
-                key={idx}
-                data-aos="fade-up"
-                className={`
-    group relative rounded-xl overflow-hidden p-10 cursor-pointer
-    transition-all duration-300
-    ${isActive || isHovered ? "bg-[#0271B1] text-white" : "bg-[#0271B1] text-gray-900"}
-    shadow-lg hover:shadow-2xl
-  `}
-              >
-                <div
-                  className="absolute inset-0 translate-y-2 bg-white rounded-xl -z-10 
-    transition-all duration-300 ease-in-out
-    group-hover:bg-[#0271B1] group-hover:translate-y-2"
-                ></div>
-
-                <div
-                  className={`w-15 h-15 flex items-center justify-center rounded-lg mb-4 text-lg
-      ${isActive || isHovered ? "bg-blue-600 text-white" : "bg-blue-100 text-blue-600"}
-    `}
-                >
-                  {card.icon}
-                </div>
-
-                <h3
-                  className={`text-lg font-semibold mb-2 ${isActive || isHovered ? "text-white" : "text-gray-900"}
-      group-hover:text-white
-      `}
-                >
-                  {card.title}
-                </h3>
-
-                <p
-                  className={`text-sm mb-4 ${isActive || isHovered ? "text-white" : "text-gray-600"}
-      group-hover:text-white
-      `}
-                >
-                  {card.desc}
-                </p>
-
-                <a
-                  href={card.link} // dynamic link from card object
-                  className={`
-    text-md flex items-center gap-2 font-semibold transition-all duration-300
-    ${isActive || isHovered ? "text-white" : "text-[#0271B1]"}
-    group-hover:text-white
-  `}
-                >
-                  {card.linkText || "Read More"}
-                  <FaArrowRight
-                    className={`
-      inline-block transform transition-transform duration-300
-      ${isActive || isHovered ? "rotate-45 text-white" : "rotate-0 text-[#0271B1]"}
-      group-hover:rotate-45 group-hover:text-white
-    `}
-                  />
-                </a>
-
-              </div>
-
-            );
-          })}
-        </div>
-      </section>
-      <div className="border-b-2 border-blue-200 max-w-7xl mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
-
-      <section className="max-w-[100%] mx-auto p-6 md:p-12">
-        <div className="flex flex-col mb-12">
-          <div className="mb-4"
-            data-aos="zoom-in"
-          >{currentTab.icon}</div>
-
-          <h1 className="text-xl sm:text-2xl md:text-[28px] font-bold mb-2"
-            data-aos="fade-up"
-          >
-            Our AI Development Services
-          </h1>
-
-          <p className="text-gray-600 max-w-7xl dark:text-white"
-            data-aos="zoom-in"
-          >
-            From generative AI development services to overall AI application
-            development services, we offer next-gen AI solutions to your enterprise
-            to propel your business operations to greater heights. Our expert team
-            specializes in AI app development, chatbot assistance, predictive
-            analysis & image recognition. Explore our artificial intelligence
-            services
-          </p>
-        </div>
-
-        <div className=" scrollbar-hide w-full mb-7 border-b-2 border-gray-200">
-          <div
-            className="
-      flex flex-nowrap
-      overflow-x-auto lg:overflow-x-visible
-      sm:scrollbar-thin lg:scrollbar-none
-      sm:scrollbar-thin sm:scrollbar-thumb-blue-500 sm:scrollbar-track-gray-200
-      sm:scrollbar-thumb-rounded-full sm:scrollbar-track-rounded-full
-      sm:hover:scrollbar-thumb-blue-600
-    "
-            data-aos="fade-up"
-          >
-            {tabsData.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex-none text-[13px] text-center px-6 py-2 font-medium cursor-pointer transition-all duration-300 ${activeTab === tab.id
-                  ? "border-b-4 border-[#0271B1] text-[#0271B1]"
-                  : "text-gray-600 dark:text-white"
-                  }`}
-              >
-                {tab.title}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div
-          className={`flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 ${currentTab.id % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
-            }`}
-        >
-          {/* Image */}
-          <div
-            className="w-full md:w-2/5 relative overflow-hidden rounded-lg shadow-lg aspect-[4/3]"
-            data-aos="zoom-in"
-          >
-            <AnimatePresence mode="popLayout">
-              <motion.img
-                key={currentTab.img}
-                src={currentTab.img}
-                alt={currentTab.heading}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
-                exit={{ opacity: 0, filter: "blur(12px)", scale: 1.05 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </AnimatePresence>
-          </div>
-
-          {/* Text */}
-          <div className="w-full md:w-3/5">
-            <h2
-              className="text-lg sm:text-[26px] md:text-[28px] font-bold mb-4"
-              data-aos="zoom-in"
-            >
-              {currentTab.heading}
-            </h2>
-            <p
-              className="text-gray-700 text-md dark:text-white"
-              data-aos="zoom-in"
-            >
-              {currentTab.paragraph}
-            </p>
-          </div>
-        </div>
-
-      </section>
-
-
-
-
-
-
-
-
-      <div className="border-b-2 border-blue-200 max-w-7xl mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
-
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-[28px] font-bold mb-2"
-          data-aos="fade-up"
-        >Our Tech Stack</h2>
-        <p className="text-gray-600 mb-8 max-w-7xl dark:text-white"
-          data-aos="zoom-in"
-        >
-          A robust blend of cutting-edge tools and technologies, chosen to deliver scalable, secure,
-          and high-performance solutions that help your projects run faster, smarter, and more efficiently.
-        </p>
-
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-          {techStack.map((tech, idx) => (
-            <div
-              key={idx}
-              data-aos="zoom-in"
-              data-aos-delay={idx * 100}
-              className="flex items-center justify-center gap-4 border-4 border-[#0271B1] rounded-lg px-4 py-3 
-                       transition-all duration-300 hover:shadow-lg hover:scale-105 bg-white"
-            >
-              {tech.icon}
-              <span className="font-medium dark:text-[#0271B1]">{tech.name}</span>
-            </div>
-          ))}
-        </div>
-
-        <div className="w-full py-16">
-          <Swiper
-            modules={[Autoplay, Pagination]}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
-            pagination={{ clickable: true }}
-            loop={true}
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
-            className="w-full text-[#0271B1]"
-          >
-            {slides.map((slide, index) => (
-              <SwiperSlide key={index}>
-                <div className="flex flex-col items-center justify-center px-6 text-center">
-                  {/* Heading + Icon */}
-                  <div
-                    className="flex items-center gap-3 mb-4 cursor-pointer"
-                    data-aos="fade-up"
-                    onClick={toggleAutoplay}
-                  >
-                    {slide.icon}
-                    <h2 className="text-xl md:text-3xl font-bold text-gray-800 dark:text-white">
-                      {slide.title}
-                    </h2>
-                  </div>
-
-                  {/* Paragraph */}
-                  <p
-                    className="text-base md:text-lg text-gray-600 dark:text-white max-w-3xl mb-6 cursor-pointer"
-                    data-aos="zoom-in"
-                    onClick={toggleAutoplay}
-                  >
-                    {slide.description}
-                  </p>
-
-                  {/* Pagination dots */}
-                  <div className="swiper-pagination !static mt-4"></div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </section>
-      <div className="border-b-2 border-blue-200 max-w-7xl mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Heading */}
-        <h2 className="text-[28px] font-bold mb-2"
-          data-aos="fade-up"
-        >
-          AI in Action: Industries We’ve Transformed
-        </h2>
-        <p className="text-gray-600 mb-8 max-w-7xl dark:text-white"
-          data-aos="zoom-in"
-        >
-          From disruptive startups to global enterprises, we empower industries with
-          innovation-led solutions. Our versatility ensures every sector benefits
-          from technology that drives growth and transformation.
-        </p>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {industries.map((industry, idx) => (
-            <div
-              key={idx}
-              className="group flex flex-col items-center p-4 justify-center rounded-lg border border-gray-200 dark:border-gray-900 bg-white dark:bg-gray-900 cursor-pointer transition-all duration-300 hover:bg-[#0271B1]"
-
-              data-aos="zoom-in"
-            >
-              <div className="w-full flex items-center justify-center p-12 rounded-lg bg-gray-200 group-hover:bg-gray-200">
-                <Image
-                  src={industry.icon}
-                  alt={industry.name}
-                  width={60}
-                  height={60}
-                  className="transition-all rounded-xl duration-300
-               h-[40px] w-[70]  
-               sm:w-[60px] sm:h-[60px] 
-              "
-                />
-              </div>
-
-              <p className="text-md font-medium py-2  w-full text-[#0271B1] transition-all duration-300 group-hover:text-white">
-                {industry.name}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-
-      <div className="border-b-2 border-blue-200 max-w-7xl mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
-
-
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-[28px] font-bold mb-2"
-          data-aos="fade-up"
-        >Selected Case Studies</h2>
-        <p className="text-gray-600 mb-8 dark:text-white"
-          data-aos="zoom-in"
-        >
-          Real companies. Real impact. Measurable ROI.
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {caseStudies.map((study, idx) => (
-            <div
-              key={idx}
-              data-aos="fade-up"
-              data-aos-delay={idx * 100}
-              className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300"
-            >
-              <img
-                src={study.image}
-                alt={study.title}
-                className="w-full h-40 object-cover"
-              />
-
-              <div className="bg-blue-100 dark:bg-gray-800 p-6 flex flex-col justify-between flex-1">
-                <div>
-                  <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
-                    {study.title}
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    {study.description}
-                  </p>
-                </div>
-
-                <div className="flex gap-3 flex-wrap">
-                  {study.stats.map((stat, sIdx) => (
-                    <div
-                      key={sIdx}
-                      className="flex-1 min-w-[90px] bg-white dark:bg-gray-700 border-0 rounded-lg px-4 py-2 text-center
-     transition-all duration-300 cursor-pointer hover:bg-[#0271B1] group"
-                    >
-                      <div className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-white">
-                        {stat.value}
-                      </div>
-                      <div className="text-sm text-gray-600 dark:text-gray-300 group-hover:text-white">
-                        {stat.label}
-                      </div>
-                    </div>
-
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-
-
-        </div>
-        <a href="/case-study">
-          <div className="flex justify-center py-10">
-            <button className=" px-8 py-3 cursor-pointer bg-[#0271B1] hover:text-gray-900 font-medium text-white rounded-md hover:bg-[#0692e2] transition">
+        <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4" data-aos="zoom-in">
+          <a href="/about">
+            <button className="w-full sm:w-auto px-6 cursor-pointer py-2 text-sm border-2 border-[#0271B1] text-[#0271B1] rounded hover:bg-[#0271B1] hover:text-white transition">
               Read More
             </button>
+          </a>
+          <a href="/contact">
+            <button className="w-full sm:w-auto px-5 py-2 bg-[#0271B1] cursor-pointer text-white rounded transition">
+              Contact us today
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div className="flex-1 flex justify-center lg:justify-end relative overflow-visible">
+        <div data-aos="fade-up" className="relative w-[16rem] sm:w-[22rem] h-[22rem] sm:h-[32rem] rounded-lg overflow-hidden">
+          <Image src={sectionimg1} alt="Back image" className="w-full h-full object-cover rounded-lg" />
+        </div>
+        <div data-aos="fade-down" className="absolute top-1/2 -translate-y-1/2 left-0 sm:left-12 w-48 sm:w-80 h-52 sm:h-80 rounded-xl overflow-hidden">
+          <Image src={sectionimg2} alt="free" className="w-full h-full object-cover rounded-xl" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div className="border-b border-blue-200 max-w-[1400px] mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
+
+  {/* Capabilities Section */}
+  <section id="capabilities" className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="w-full flex flex-col">
+      <h2 className="text-[28px] font-bold mb-2" data-aos="fade-up">Core Capabilities</h2>
+      <p className="text-gray-600 mb-8 max-w-4xl dark:text-white" data-aos="zoom-in">
+        Modular services designed for rapid impact — from AI and data to
+        cloud-native platforms and secure operations.
+      </p>
+
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {cards.map((card, idx) => {
+          const isActive = activeIndex === idx;
+          const isHovered = hoverIndex === idx;
+
+          return (
+            <div
+              key={idx}
+              data-aos="fade-up"
+              className={`group relative rounded-xl overflow-hidden p-10 cursor-pointer transition-all duration-300 ${
+                isActive || isHovered ? "bg-[#0271B1] text-white" : "bg-[#0271B1] text-gray-900"
+              } shadow-lg hover:shadow-2xl`}
+            >
+              <div className="absolute inset-0 translate-y-2 bg-white rounded-xl -z-10 transition-all duration-300 ease-in-out group-hover:bg-[#0271B1] group-hover:translate-y-2"></div>
+
+              <div className={`w-15 h-15 flex items-center justify-center rounded-lg mb-4 text-lg ${
+                isActive || isHovered ? "bg-blue-600 text-white" : "bg-blue-100 text-blue-600"
+              }`}>
+                {card.icon}
+              </div>
+
+              <h3 className={`text-lg font-semibold mb-2 ${
+                isActive || isHovered ? "text-white" : "text-gray-900"
+              } group-hover:text-white`}>
+                {card.title}
+              </h3>
+
+              <p className={`text-sm mb-4 ${
+                isActive || isHovered ? "text-white" : "text-gray-600"
+              } group-hover:text-white`}>
+                {card.desc}
+              </p>
+
+              <a
+                href={card.link}
+                className={`text-md flex items-center gap-2 font-semibold transition-all duration-300 ${
+                  isActive || isHovered ? "text-white" : "text-[#0271B1]"
+                } group-hover:text-white`}
+              >
+                {card.linkText || "Read More"}
+                <FaArrowRight className={`inline-block transform transition-transform duration-300 ${
+                  isActive || isHovered ? "rotate-45 text-white" : "rotate-0 text-[#0271B1]"
+                } group-hover:rotate-45 group-hover:text-white`} />
+              </a>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <div className="border-b-2 border-blue-200 max-w-[1400px] mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
+
+  {/* AI Services Section */}
+  <section className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="w-full flex flex-col">
+      <div className="mb-4" data-aos="zoom-in">{currentTab.icon}</div>
+      <h1 className="text-xl sm:text-2xl md:text-[28px] font-bold mb-2" data-aos="fade-up">
+        Our AI Development Services
+      </h1>
+      <p className="text-gray-600 max-w-7xl dark:text-white" data-aos="zoom-in">
+        From generative AI development services to overall AI application
+        development services, we offer next-gen AI solutions to your enterprise
+        to propel your business operations to greater heights. Our expert team
+        specializes in AI app development, chatbot assistance, predictive
+        analysis & image recognition. Explore our artificial intelligence
+        services
+      </p>
+    </div>
+
+    <div className="scrollbar-hide w-full mb-7 border-b-2 border-gray-200">
+      <div className="flex flex-nowrap overflow-x-auto lg:overflow-x-visible sm:scrollbar-thin lg:scrollbar-none sm:scrollbar-thin sm:scrollbar-thumb-blue-500 sm:scrollbar-track-gray-200 sm:scrollbar-thumb-rounded-full sm:scrollbar-track-rounded-full sm:hover:scrollbar-thumb-blue-600" data-aos="fade-up">
+        {tabsData.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`flex-none text-[13px] text-center px-6 py-2 font-medium cursor-pointer transition-all duration-300 ${
+              activeTab === tab.id
+                ? "border-b-4 border-[#0271B1] text-[#0271B1]"
+                : "text-gray-600 dark:text-white"
+            }`}
+          >
+            {tab.title}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div className="w-full flex flex-col lg:flex-row items-center lg:items-start gap-10">
+      <div className="flex-1 flex justify-center lg:justify-start relative overflow-hidden rounded-lg shadow-lg aspect-[4/3]" data-aos="zoom-in">
+        <AnimatePresence mode="popLayout">
+          <motion.img
+            key={currentTab.img}
+            src={currentTab.img}
+            alt={currentTab.heading}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+            exit={{ opacity: 0, filter: "blur(12px)", scale: 1.05 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="w-full h-full object-cover"
+          />
+        </AnimatePresence>
+      </div>
+
+      <div className="flex-1 space-y-4">
+        <h2 className="text-lg sm:text-[26px] md:text-[28px] font-bold" data-aos="zoom-in">
+          {currentTab.heading}
+        </h2>
+        <p className="text-gray-700 text-md dark:text-white" data-aos="zoom-in">
+          {currentTab.paragraph}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div className="border-b-2 border-blue-200 max-w-[1400px] mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
+
+  {/* Tech Stack Section */}
+  <section className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="w-full flex flex-col">
+      <h2 className="text-[28px] font-bold mb-2" data-aos="fade-up">Our Tech Stack</h2>
+      <p className="text-gray-600 mb-8 max-w-7xl dark:text-white" data-aos="zoom-in">
+        A robust blend of cutting-edge tools and technologies, chosen to deliver scalable, secure,
+        and high-performance solutions that help your projects run faster, smarter, and more efficiently.
+      </p>
+
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        {techStack.map((tech, idx) => (
+          <div
+            key={idx}
+            data-aos="zoom-in"
+            data-aos-delay={idx * 100}
+            className="flex items-center justify-center gap-4 border-4 border-[#0271B1] rounded-lg px-4 py-3 
+                       transition-all duration-300 hover:shadow-lg hover:scale-105 bg-white"
+          >
+            {tech.icon}
+            <span className="font-medium dark:text-[#0271B1]">{tech.name}</span>
           </div>
-        </a>
+        ))}
+      </div>
 
-      </section>
+      <div className="w-full py-16">
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          loop={true}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          className="w-full text-[#0271B1]"
+        >
+          {slides.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <div className="flex flex-col items-center justify-center px-6 text-center">
+                <div className="flex items-center gap-3 mb-4 cursor-pointer" data-aos="fade-up" onClick={toggleAutoplay}>
+                  {slide.icon}
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-800 dark:text-white">
+                    {slide.title}
+                  </h2>
+                </div>
 
-      <div className="border-b-2 border-blue-200 max-w-7xl mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
-      <section className="max-w-6xl mx-auto px-4 py-12">
+                <p className="text-base md:text-lg text-gray-600 dark:text-white max-w-3xl mb-6 cursor-pointer" data-aos="zoom-in" onClick={toggleAutoplay}>
+                  {slide.description}
+                </p>
+
+                <div className="swiper-pagination !static mt-4"></div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </div>
+  </section>
+
+  <div className="border-b-2 border-blue-200 max-w-[1400px] mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
+
+  {/* Industries Section */}
+  <section className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="w-full flex flex-col">
+      <h2 className="text-[28px] font-bold mb-2" data-aos="fade-up">
+        AI in Action: Industries We've Transformed
+      </h2>
+      <p className="text-gray-600 mb-8 max-w-7xl dark:text-white" data-aos="zoom-in">
+        From disruptive startups to global enterprises, we empower industries with
+        innovation-led solutions. Our versatility ensures every sector benefits
+        from technology that drives growth and transformation.
+      </p>
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        {industries.map((industry, idx) => (
+          <div
+            key={idx}
+            className="group flex flex-col items-center p-4 justify-center rounded-lg border border-gray-200 dark:border-gray-900 bg-white dark:bg-gray-900 cursor-pointer transition-all duration-300 hover:bg-[#0271B1]"
+            data-aos="zoom-in"
+          >
+            <div className="w-full flex items-center justify-center p-12 rounded-lg bg-gray-200 group-hover:bg-gray-200">
+              <Image
+                src={industry.icon}
+                alt={industry.name}
+                width={60}
+                height={60}
+                className="transition-all rounded-xl duration-300 h-[40px] w-[70] sm:w-[60px] sm:h-[60px]"
+              />
+            </div>
+
+            <p className="text-md font-medium py-2 w-full text-[#0271B1] transition-all duration-300 group-hover:text-white">
+              {industry.name}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div className="border-b-2 border-blue-200 max-w-[1400px] mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
+
+  {/* Case Studies Section */}
+  <section className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="w-full flex flex-col">
+      <h2 className="text-[28px] font-bold mb-2" data-aos="fade-up">Selected Case Studies</h2>
+      <p className="text-gray-600 mb-8 dark:text-white" data-aos="zoom-in">
+        Real companies. Real impact. Measurable ROI.
+      </p>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {caseStudies.map((study, idx) => (
+          <div
+            key={idx}
+            data-aos="fade-up"
+            data-aos-delay={idx * 100}
+            className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300"
+          >
+            <img src={study.image} alt={study.title} className="w-full h-40 object-cover" />
+
+            <div className="bg-blue-100 dark:bg-gray-800 p-6 flex flex-col justify-between flex-1">
+              <div>
+                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+                  {study.title}
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  {study.description}
+                </p>
+              </div>
+
+              <div className="flex gap-3 flex-wrap">
+                {study.stats.map((stat, sIdx) => (
+                  <div
+                    key={sIdx}
+                    className="flex-1 min-w-[90px] bg-white dark:bg-gray-700 border-0 rounded-lg px-4 py-2 text-center transition-all duration-300 cursor-pointer hover:bg-[#0271B1] group"
+                  >
+                    <div className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-white">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-gray-600 dark:text-gray-300 group-hover:text-white">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <a href="/case-study">
+        <div className="flex justify-center py-10">
+          <button className="px-8 py-3 cursor-pointer bg-[#0271B1] hover:text-gray-900 font-medium text-white rounded-md hover:bg-[#0692e2] transition">
+            Read More
+          </button>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <div className="border-b-2 border-blue-200 max-w-[1400px] mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
+
+  {/* Testimonials Section */}
+ <section className="max-w-6xl mx-auto px-4 py-12">
         {/* Heading */}
         <h2
           className="text-[28px] font-bold mb-2 text-center"
@@ -1304,10 +1164,10 @@ const Homepage = () => {
       </section>
 
 
-
-      <div className="border-b-2 border-blue-200 max-w-7xl mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
-      <Footer />
-    </>
+  <div className="border-b-2 border-blue-200 max-w-[1400px] mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
+  
+  <Footer />
+</>
   );
 };
 
