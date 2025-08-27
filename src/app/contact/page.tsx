@@ -399,21 +399,22 @@ export default function ContactPage() {
 
               {/* Submit button */}
               <div className="relative flex flex-col items-end">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-[#0271B1] text-white cursor-pointer px-12 py-3 rounded-md transition disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </button>
-                <div className="-mt-8">
-                  <Image
-                    src={letter}
-                    alt="Letter icon"
-                    className="-ml-20 w-70 h-40"
-                  />
-                </div>
-              </div>
+  <button
+    type="submit"
+    disabled={isSubmitting}
+    className="bg-[#0271B1] text-white cursor-pointer px-12 py-3 rounded-md transition disabled:opacity-50 disabled:cursor-not-allowed z-10"
+  >
+    {isSubmitting ? "Sending..." : "Send Message"}
+  </button>
+  <div className="-mt-8 pointer-events-none">
+    <Image
+      src={letter}
+      alt="Letter icon"
+      className="-ml-20 w-70 h-40"
+    />
+  </div>
+</div>
+
             </form>
           </div>
         </div>
