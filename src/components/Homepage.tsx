@@ -560,7 +560,7 @@ const Homepage = () => {
   return (
     <>
       <main className="min-h-screen bg-gradient-to-b from-white to-blue-100 lg:-mt-2  px-4 flex items-center">
-        <div className="w-full max-w-screen-2xl mx-auto px-4 flex flex-col lg:flex-row items-center lg:items-start gap-10">
+        <div className="max-w-[1400px] mx-auto w-full flex flex-col lg:flex-row items-center lg:items-start gap-10 px-4 sm:px-6 lg:px-8">
 
           <div className="flex-1 space-y-8">
             <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-4">
@@ -669,8 +669,10 @@ const Homepage = () => {
 
       <section
         data-aos="fade-up"
-        className="w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-gray-300"
+        className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-gray-300"
       >
+
+
         <div className="flex flex-col sm:flex-row items-center gap-10">
           <div className="w-full sm:w-1/2 text-center sm:text-left">
             <h2 className="lg:text-3xl text-2xl font-bold mb-4"
@@ -741,7 +743,7 @@ const Homepage = () => {
 
       <section
         id="capabilities"
-        className="w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
       >
         <h2 className="text-[28px] font-bold mb-2"
           data-aos="fade-up"
@@ -927,7 +929,7 @@ const Homepage = () => {
 
       <div className="border-b-2 border-blue-200 max-w-7xl mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
 
-      <section className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h2 className="text-[28px] font-bold mb-2"
           data-aos="fade-up"
         >Our Tech Stack</h2>
@@ -996,7 +998,6 @@ const Homepage = () => {
       </section>
       <div className="border-b-2 border-blue-200 max-w-7xl mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
         {/* Heading */}
         <h2 className="text-[28px] font-bold mb-2"
           data-aos="fade-up"
