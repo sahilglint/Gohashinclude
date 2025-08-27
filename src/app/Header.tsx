@@ -110,7 +110,7 @@ export default function Header() {
 
   return (
     <header className="bg-white dark:bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-[1400px] mx-auto flex justify-between items-center py-0 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1400px] mx-auto flex justify-between items-center py-2 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2 cursor-pointer">
           <Image
             src={logo}
