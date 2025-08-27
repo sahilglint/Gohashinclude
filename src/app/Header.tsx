@@ -109,7 +109,7 @@ export default function Header() {
 
   return (
     <header className="bg-white dark:bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-[1400px] mx-auto flex justify-between items-center py-2 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1400px] mx-auto flex justify-between items-center py-0 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2 cursor-pointer">
           <Image
             src={logo}
@@ -122,7 +122,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-4 sm:space-x-6">
+        <nav className="hidden md:flex text-sm items-center space-x-4 sm:space-x-6">
           {navLinks.map((link, index) => {
             const isActive =
               pathname === link.href ||
@@ -141,7 +141,7 @@ export default function Header() {
                   <button
                     type="button"
                     onClick={() => toggleDesktopDropdown(index)}
-                    className={`flex items-center relative before:absolute before:bottom-0 before:left-0 before:top-5 before:h-[3px] before:bg-[#0271B1] before:transition-all before:duration-300 ${isActive || desktopDropdownOpen === index
+                    className={`flex items-center relative before:absolute before:bottom-0 before:left-0 before:top-5 before:h-[2px] before:bg-[#0271B1] before:transition-all before:duration-300 ${isActive || desktopDropdownOpen === index
                         ? "before:w-full text-[#0271B1]"
                         : "before:w-0 group-hover:before:w-full text-gray-800 dark:text-gray-800"
                       }`}
@@ -161,7 +161,7 @@ export default function Header() {
 
                   {/* Dropdown */}
                 <div
-  className={`fixed left-1/2 -translate-x-1/2 mt-5
+  className={`fixed left-1/2 -translate-x-1/2 mt-4
     w-[1250px] max-w-[95vw] bg-white dark:bg-white shadow-xl rounded-b-2xl p-5
     border border-gray-100 transition-all duration-300 z-50 
     grid grid-cols-3 gap-5 scale-95 
@@ -208,7 +208,7 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`flex items-center relative before:absolute before:bottom-0 before:left-0 before:top-5 before:h-[3px] before:bg-[#0271B1] before:transition-all before:duration-300 ${isActive
+                className={`flex items-center relative before:absolute before:bottom-0 before:left-0 before:top-5 before:h-[2px] before:bg-[#0271B1] before:transition-all before:duration-300 ${isActive
                     ? "before:w-full text-[#0271B1]"
                     : "before:w-0 hover:before:w-full text-gray-800 text-md font-medium dark:text-gray-800"
                   }`}
