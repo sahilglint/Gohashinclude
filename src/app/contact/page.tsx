@@ -17,9 +17,6 @@ import Footer from "@/components/Footer";
 import facebook from "../../assets/facebook.png";
 import linkedin from "../../assets/linkedin.png";
 
-
-
-
 // Toast notification component
 const Toast = ({
   message,
@@ -60,10 +57,6 @@ type FormData = {
 };
 
 export default function ContactPage() {
-  //const { control, handleSubmit } = useForm();
-
-  //const onSubmit = (data: any) => {
-  //console.log("Form Data:", data);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [toast, setToast] = useState<{
     message: string;
@@ -90,11 +83,10 @@ export default function ContactPage() {
 
     try {
       const payload = {
-        fullName: `${data.firstName} ${data.lastName}`, // combine first & last name
-        emailAddress: data.email, // rename
-        // phoneNumber: data.phone, // rename
+        fullName: `${data.firstName} ${data.lastName}`,
+        emailAddress: data.email,
         phoneNumber: `+${data.phone}`,
-        subject: "Contact Form Submission", // default subject
+        subject: "Contact Form Submission",
         message: data.message,
       };
 
@@ -107,7 +99,7 @@ export default function ContactPage() {
         }
       );
 
-      const result = await res.json(); // parse API response
+      const result = await res.json();
 
       if (res.ok) {
         setToast({
@@ -205,18 +197,18 @@ export default function ContactPage() {
                 >
                   <Image src={ChatIcon} alt="Chat" width={40} height={40} />
                 </a>
-               
+
                 <a href="https://www.facebook.com/gohashinclude.1" target="_blank" >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="fill-white w-10 h-10" viewBox="0 0 49.652 49.652">
-                                <path d="M24.826 0C11.137 0 0 11.137 0 24.826c0 13.688 11.137 24.826 24.826 24.826 13.688 0 24.826-11.138 24.826-24.826C49.652 11.137 38.516 0 24.826 0zM31 25.7h-4.039v14.396h-5.985V25.7h-2.845v-5.088h2.845v-3.291c0-2.357 1.12-6.04 6.04-6.04l4.435.017v4.939h-3.219c-.524 0-1.269.262-1.269 1.386v2.99h4.56z" />
-                            </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="fill-white w-10 h-10" viewBox="0 0 49.652 49.652">
+                    <path d="M24.826 0C11.137 0 0 11.137 0 24.826c0 13.688 11.137 24.826 24.826 24.826 13.688 0 24.826-11.138 24.826-24.826C49.652 11.137 38.516 0 24.826 0zM31 25.7h-4.039v14.396h-5.985V25.7h-2.845v-5.088h2.845v-3.291c0-2.357 1.12-6.04 6.04-6.04l4.435.017v4.939h-3.219c-.524 0-1.269.262-1.269 1.386v2.99h4.56z" />
+                  </svg>
                 </a>
-                 <a href="https://www.linkedin.com/company/gohashinclude-pvt-ltd/" target="_blank" >
-                               <svg xmlns="http://www.w3.org/2000/svg" className=" fill-white w-10 h-10" viewBox="0 0 112.196 112.196">
-                                        <circle cx="56.098" cy="56.097" r="56.098" fill="#007AB9" />
-                                        <path fill="#fff" d="M89.616 60.611v23.128H76.207V62.161c0-5.418-1.936-9.118-6.791-9.118-3.705 0-5.906 2.491-6.878 4.903-.353.862-.444 2.059-.444 3.268v22.524h-13.41s.18-36.546 0-40.329h13.411v5.715c-.027.045-.065.089-.089.132h.089v-.132c1.782-2.742 4.96-6.662 12.085-6.662 8.822 0 15.436 5.764 15.436 18.149zm-54.96-36.642c-4.587 0-7.588 3.011-7.588 6.967 0 3.872 2.914 6.97 7.412 6.97h.087c4.677 0 7.585-3.098 7.585-6.97-.089-3.956-2.908-6.967-7.496-6.967zm-6.791 59.77H41.27v-40.33H27.865v40.33z" />
-                               </svg>
-               </a>
+                <a href="https://www.linkedin.com/company/gohashinclude-pvt-ltd/" target="_blank" >
+                  <svg xmlns="http://www.w3.org/2000/svg" className=" fill-white w-10 h-10" viewBox="0 0 112.196 112.196">
+                    <circle cx="56.098" cy="56.097" r="56.098" fill="#007AB9" />
+                    <path fill="#fff" d="M89.616 60.611v23.128H76.207V62.161c0-5.418-1.936-9.118-6.791-9.118-3.705 0-5.906 2.491-6.878 4.903-.353.862-.444 2.059-.444 3.268v22.524h-13.41s.18-36.546 0-40.329h13.411v5.715c-.027.045-.065.089-.089.132h.089v-.132c1.782-2.742 4.96-6.662 12.085-6.662 8.822 0 15.436 5.764 15.436 18.149zm-54.96-36.642c-4.587 0-7.588 3.011-7.588 6.967 0 3.872 2.914 6.97 7.412 6.97h.087c4.677 0 7.585-3.098 7.585-6.97-.089-3.956-2.908-6.967-7.496-6.967zm-6.791 59.77H41.27v-40.33H27.865v40.33z" />
+                  </svg>
+                </a>
               </div>
               <div className="absolute -bottom-8 -right-8 opacity-50 pointer-events-none">
                 <Image
@@ -236,16 +228,18 @@ export default function ContactPage() {
                 {/* First Name */}
                 <div className="relative">
                   <input
+                    id="firstName"
                     type="text"
                     {...register("firstName", {
                       required: "First name is required",
                     })}
-                    className="peer w-full border-b-2 border-[#04152E] focus:border-[#0271B1] outline-none py-2"
+                    className="peer w-full text-gray-900 font-medium border-b-2 border-[#04152E] focus:border-[#0271B1] outline-none py-2"
                   />
                   <label
+                    htmlFor="firstName"
                     className={`absolute left-0 text-[#04152E] transition-all duration-300 ${formValues.firstName
-                        ? "-top-4 text-sm text-[#0271B1]"
-                        : "top-2"
+                      ? "-top-4 text-sm text-[#0271B1]"
+                      : "top-2"
                       } peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#0271B1] ${errors.firstName ? "text-red-500" : ""
                       }`}
                   >
@@ -261,16 +255,18 @@ export default function ContactPage() {
                 {/* Last Name */}
                 <div className="relative">
                   <input
+                    id="lastName"
                     type="text"
                     {...register("lastName", {
                       required: "Last name is required",
                     })}
-                    className="peer w-full border-b-2 border-[#04152E] focus:border-[#0271B1] outline-none py-2"
+                    className="peer w-full text-gray-900 font-medium border-b-2 border-[#04152E] focus:border-[#0271B1] outline-none py-2"
                   />
                   <label
+                    htmlFor="lastName"
                     className={`absolute left-0 text-[#04152E] transition-all duration-300 ${formValues.lastName
-                        ? "-top-4 text-sm text-[#0271B1]"
-                        : "top-2"
+                      ? "-top-4 text-sm text-[#0271B1]"
+                      : "top-2"
                       } peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#0271B1] ${errors.lastName ? "text-red-500" : ""
                       }`}
                   >
@@ -288,6 +284,7 @@ export default function ContactPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 p-2 gap-6">
                 <div className="relative">
                   <input
+                    id="email"
                     type="email"
                     {...register("email", {
                       required: "Email is required",
@@ -296,12 +293,13 @@ export default function ContactPage() {
                         message: "Invalid email address",
                       },
                     })}
-                    className="peer w-full border-b-2 border-[#04152E] focus:border-[#0271B1] outline-none py-2"
+                    className="peer w-full text-gray-900 font-medium border-b-2 border-[#04152E] focus:border-[#0271B1] outline-none py-2"
                   />
                   <label
+                    htmlFor="email"
                     className={`absolute left-0 text-[#04152E] transition-all duration-300 ${formValues.email
-                        ? "-top-4 text-sm text-[#0271B1]"
-                        : "top-2"
+                      ? "-top-4 text-sm text-[#0271B1]"
+                      : "top-2"
                       } peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#0271B1] ${errors.email ? "text-red-500" : ""
                       }`}
                   >
@@ -313,44 +311,8 @@ export default function ContactPage() {
                     </p>
                   )}
                 </div>
-
-                {/*<div className="relative">
-                  <input
-                    type="tel"
-                    maxLength={20}
-                    {...register("phone", {
-                      pattern: {
-                        value: /^[+]?[0-9\s\-()]{6,20}$/,
-                        message: "Invalid phone number format",
-                      },
-                      maxLength: {
-                        value: 20,
-                        message: "Phone number cannot exceed 20 digits",
-                      },
-                    })}
-                    className="peer w-full border-b-2 border-[#04152E] focus:border-[#0271B1] outline-none py-2"
-                  />
-                  <label
-                    className={`absolute left-0 text-[#04152E] transition-all duration-300 ${
-                      formValues.phone
-                        ? "-top-4 text-sm text-[#0271B1]"
-                        : "top-2"
-                    } peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#0271B1] ${
-                      errors.phone ? "text-red-500" : ""
-                    }`}
-                  >
-                    Phone Number
-                  </label>
-                  {errors.phone && (
-                    <p className="text-red-500 text-xs mt-1">
-                      {errors.phone.message}
-                    </p>
-                  )}
-                </div>*/}
-
-                {/* Phone Field with Country Code */}
                 <div className="w-full max-w-md mx-auto">
-                  <label className="block text-sm font-semibold text-gray-700 mb-[-6px]">
+                  <label className="block text-xs text-gray-900 mb-[-8px]">
                     Phone Number
                   </label>
                   <Controller
@@ -360,58 +322,61 @@ export default function ContactPage() {
                     render={({ field }) => (
                       <PhoneInput
                         {...field}
-                        country={"us"} // default country
+                        country={"in"} // default country India
                         enableSearch
+                        value={field.value || ""}
+                        onChange={(phone) => field.onChange(phone)}
                         inputStyle={{
                           width: "100%",
-                          // height: "40px",
                           border: "none",
-                          borderBottom: errors.phone
-                            ? "2px solid red"
-                            : "2px solid #04152E",
+                          borderBottom: errors.phone ? "2px solid red" : "2px solid #04152E",
                           background: "transparent",
-                          // paddingLeft: "3rem",
                           outline: "none",
+                          color: "black", // phone number color
                           fontSize: "1rem",
                           transition: "border-color 0.3s",
                         }}
                         buttonStyle={{
                           border: "none",
                           background: "transparent",
+                          color: "black", // dropdown arrow color
+                        }}
+                        dropdownStyle={{
+                          color: "black", // dropdown list text color
                         }}
                         containerStyle={{
                           width: "100%",
                         }}
                         onFocus={(e) => {
-                          e.target.style.borderBottom = "2px solid #0271B1"; // focus color
+                          e.target.style.borderBottom = "2px solid #0271B1";
                         }}
                         onBlur={(e) => {
                           e.target.style.borderBottom = errors.phone
                             ? "2px solid red"
-                            : "2px solid #04152E"; // revert on blur
+                            : "2px solid #04152E";
                         }}
                       />
                     )}
                   />
+
                   {errors.phone && (
                     <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
                   )}
                 </div>
-
-
-
               </div>
 
               {/* Message */}
               <div className="relative p-2">
                 <textarea
+                  id="message"
                   {...register("message", { required: "Message is required" })}
-                  className="peer w-full border-b-2 border-[#04152E] focus:border-blue-500 outline-none py-2 resize-none"
+                  className="peer w-full border-b-2 text-gray-900 font-medium border-[#04152E] focus:border-blue-500 outline-none py-2 resize-none"
                 ></textarea>
                 <label
+                  htmlFor="message"
                   className={`absolute left-0 p-2 text-[#04152E] transition-all duration-300 ${formValues.message
-                      ? "-top-4 text-sm text-[#0271B1]"
-                      : "top-2"
+                    ? "-top-4 text-sm text-[#0271B1]"
+                    : "top-2"
                     } peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#0271B1] ${errors.message ? "text-red-500" : ""
                     }`}
                 >
@@ -457,5 +422,3 @@ export default function ContactPage() {
     </>
   );
 }
-
-
