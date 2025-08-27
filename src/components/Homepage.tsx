@@ -1137,7 +1137,7 @@ const Homepage = () => {
         </section>
 
         {/* CTA Section */}
-        <div className="mt-16 w-full bg-gradient-to-l to-[#0271B1] from-[#003B92] rounded-lg py-10 px-6 flex flex-col items-center text-center animate-pulse-light">
+        <div className="mt-10 w-full bg-gradient-to-l to-[#0271B1] from-[#003B92] rounded-lg py-10 px-6 flex flex-col items-center text-center animate-pulse-light">
           <h2
             className="text-white text-xl md:text-2xl font-semibold mb-2"
             data-aos="fade-up"
@@ -1164,7 +1164,7 @@ const Homepage = () => {
       </section>
 
 
-  <div className="border-b-2 border-blue-200 max-w-[1400px] mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
+  {/* <div className="border-b-2 border-blue-200 max-w-[1400px] mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div> */}
   
   <Footer />
 </>
