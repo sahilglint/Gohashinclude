@@ -611,16 +611,16 @@ const Homepage = () => {
                     behavior: "smooth",
                   });
                 }}
-                className="w-full sm:w-auto text-md cursor-pointer inline-flex justify-center bg-[#0271B1] text-white font-semibold py-2 px-6 rounded-md transition-colors duration-150"
+                className="w-full sm:w-auto text-sm cursor-pointer inline-flex justify-center bg-[#0271B1] text-white font-semibold py-3 px-6 rounded-md transition-colors duration-150"
               >
                 Explore Our Capabilities
               </button>
               <a href="/contact">
                 <button
-                  className="w-full sm:w-auto cursor-pointer text-md inline-flex justify-center border-2 border-[#0271B1] 
-             hover:bg-[#0271B1] hover:text-white 
-             text-gray-900 dark:text-black 
-             font-bold py-2 px-6 rounded-md transition-colors duration-150"
+                  className="w-full sm:w-auto cursor-pointer text-sm inline-flex justify-center border-2 border-[#0271B1] 
+             hover:bg-[#0271B1] text-[#0271B1] hover:text-white 
+              dark:text-black 
+             font-bold py-3 px-6 rounded-md transition-colors duration-150"
                 >
                   Book a Consultation
                 </button>
@@ -691,7 +691,7 @@ const Homepage = () => {
               data-aos="zoom-in"
             >
               <a href="/about">
-                <button className="px-5 cursor-pointer py-2 border-2 border-[#0271B1] text-blue-600 rounded hover:bg-[#0271B1] hover:text-white transition">
+                <button className="px-6 cursor-pointer py-2 text-sm border-2 border-[#0271B1] text-[#0271B1] rounded hover:bg-[#0271B1] hover:text-white transition">
                   Read More
                 </button>
               </a>
@@ -948,7 +948,7 @@ const Homepage = () => {
                        transition-all duration-300 hover:shadow-lg hover:scale-105 bg-white"
             >
               {tech.icon}
-              <span className="font-medium">{tech.name}</span>
+              <span className="font-medium dark:text-[#0271B1]">{tech.name}</span>
             </div>
           ))}
         </div>
@@ -1014,7 +1014,7 @@ const Homepage = () => {
           {industries.map((industry, idx) => (
             <div
               key={idx}
-              className="group flex flex-col items-center p-4 justify-center rounded-lg border border-gray-200 bg-white cursor-pointer transition-all duration-300 hover:bg-[#0271B1]"
+              className="group flex flex-col items-center p-4 justify-center rounded-lg border border-gray-200 dark:border-gray-900 bg-white dark:bg-gray-900 cursor-pointer transition-all duration-300 hover:bg-[#0271B1]"
 
               data-aos="zoom-in"
             >
@@ -1134,7 +1134,7 @@ const Homepage = () => {
               {/* Left Section */}
               <div className="w-full lg:w-2/5">
                 <h1
-                  className="text-3xl text-gray-500 font-medium mb-4 block"
+                  className="text-3xl text-gray-500 dark:text-white font-medium mb-4 block"
                   data-aos="fade-up"
                 >
                   Reviews
@@ -1142,7 +1142,7 @@ const Homepage = () => {
                 {/* Removed the 23k+ Customers Feedback heading */}
 
                 <p
-                  className="text-gray-600 max-w-xl text-base md:text-lg mb-6"
+                  className="text-gray-600 max-w-xl dark:text-white text-base md:text-lg mb-6"
                   data-aos="fade-up"
                 >
                   From startups to global enterprises, our clients share how{" "}

@@ -221,7 +221,7 @@ export default function Header() {
 
           <Link
             href="/contact"
-            className="ml-3 px-4 py-2 bg-[#0271B1] text-white rounded-md hover:bg-[#025e94] transition-colors shadow-sm text-sm sm:text-base"
+            className="ml-3 px-4 py-2 bg-[#0271B1] text-white rounded-md hover:bg-[#025e94] transition-colors shadow-sm text-sm sm:text-md"
             onClick={closeAllDropdowns}
           >
             Book Free Consultation
