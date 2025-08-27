@@ -825,7 +825,7 @@ const Homepage = () => {
       </section>
       <div className="border-b-2 border-blue-200 max-w-7xl mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
 
-      <section className="max-w-[90%] mx-auto p-6 md:p-12">
+      <section className="max-w-[100%] mx-auto p-6 md:p-12">
         <div className="flex flex-col mb-12">
           <div className="mb-4"
             data-aos="zoom-in"
