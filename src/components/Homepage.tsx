@@ -457,7 +457,7 @@ const Homepage = () => {
       title: "AI Development",
       desc: "Transform your business with our artificial intelligence software development services. Leverage our state-of-the-art Generative AI solutions for innovation and growth an....",
       link: "/core-capabilities/ai",
-    linkText: "Read More", 
+      linkText: "Read More",
     },
     {
       icon: (
@@ -468,8 +468,8 @@ const Homepage = () => {
       ),
       title: "Salesforce Development",
       desc: "One of the top-rated salesforce development companies, Gohash transforms your salesforce investments into profits by developing high-end...",
-     link: "/core-capabilities/saleforce-development",
-    linkText: "Read More",
+      link: "/core-capabilities/saleforce-development",
+      linkText: "Read More",
     },
     {
       icon: (
@@ -481,7 +481,7 @@ const Homepage = () => {
       title: "Product Development",
       desc: "As a trusted product development company, we help our clients build innovative & market-winning software faster that is business-centric...",
       link: "/core-capabilities/product-development",
-    linkText: "Read More",
+      linkText: "Read More",
     },
     {
       icon: (
@@ -493,7 +493,7 @@ const Homepage = () => {
       title: "Low Code Development",
       desc: "As a trusted low-code development company, we help our clients create, deploy, and adapt cutting-edge applications to revolutionize...",
       link: "/core-capabilities/low-code-development",
-    linkText: "Read More",
+      linkText: "Read More",
     },
     {
       icon: (
@@ -505,7 +505,7 @@ const Homepage = () => {
       title: "Mobile-App Development",
       desc: "As a trusted mobile app development company, we specialize in delivering top-notch mobile app services utilizing the next-gen technologies an...",
       link: "/core-capabilities/mobile-development",
-    linkText: "Read More",
+      linkText: "Read More",
     },
     {
       icon: (
@@ -517,7 +517,7 @@ const Homepage = () => {
       title: "Web Development",
       desc: "Looking for a trusted website development company for your business? Our expert team of web developers helps client...",
       link: "/core-capabilities/web-development",
-    linkText: "Read More",
+      linkText: "Read More",
     },
     {
       icon: (
@@ -528,8 +528,8 @@ const Homepage = () => {
       ),
       title: "Software Development",
       desc: "As a trusted software development company, we deliver strategic outcomes to clients for startups, and enterprise-size...",
-     link: "/core-capabilities/software-development",
-    linkText: "Read More",
+      link: "/core-capabilities/software-development",
+      linkText: "Read More",
     },
     {
       icon: (
@@ -541,7 +541,7 @@ const Homepage = () => {
       title: "Python Development",
       desc: "As a trusted Python Development Company, we help our clients craft innovative applications with the most powerful, versatile, and flexible..",
       link: "/core-capabilities/python-development",
-    linkText: "Read More",
+      linkText: "Read More",
     },
     {
       icon: (
@@ -553,14 +553,14 @@ const Homepage = () => {
       title: "Hire Dedicated Resources",
       desc: "As a prominent AI solutions company, our AI development services are designed to unleash the potential of large volumes of data to drive...",
       link: "/core-capabilities/hire-dedicated-resource",
-    linkText: "Read More",
+      linkText: "Read More",
     },
   ];
 
   return (
     <>
       <main className="min-h-screen bg-gradient-to-b from-white to-blue-100 lg:-mt-2  px-4 flex items-center">
-        <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center lg:items-start gap-10">
+        <div className="w-full max-w-screen-2xl mx-auto px-4 flex flex-col lg:flex-row items-center lg:items-start gap-10">
 
           <div className="flex-1 space-y-8">
             <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-4">
@@ -669,7 +669,7 @@ const Homepage = () => {
 
       <section
         data-aos="fade-up"
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-gray-300"
+        className="w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-gray-300"
       >
         <div className="flex flex-col sm:flex-row items-center gap-10">
           <div className="w-full sm:w-1/2 text-center sm:text-left">
@@ -741,7 +741,7 @@ const Homepage = () => {
 
       <section
         id="capabilities"
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+        className="w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
       >
         <h2 className="text-[28px] font-bold mb-2"
           data-aos="fade-up"
@@ -927,7 +927,7 @@ const Homepage = () => {
 
       <div className="border-b-2 border-blue-200 max-w-7xl mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <section className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h2 className="text-[28px] font-bold mb-2"
           data-aos="fade-up"
         >Our Tech Stack</h2>
@@ -996,6 +996,7 @@ const Homepage = () => {
       </section>
       <div className="border-b-2 border-blue-200 max-w-7xl mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.1)]"></div>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
         {/* Heading */}
         <h2 className="text-[28px] font-bold mb-2"
           data-aos="fade-up"
